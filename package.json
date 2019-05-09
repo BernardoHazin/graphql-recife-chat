@@ -46,6 +46,13 @@
       "@vue/standard"
     ],
     "rules": {
+      "graphql/template-strings": [
+        "warn",
+        {
+          "env": "literal",
+          "projectName": "app"
+        }
+      ],
       "space-before-function-paren": 0
     },
     "parserOptions": {
