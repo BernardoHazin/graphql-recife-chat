@@ -32,10 +32,10 @@ export default {
   }
 }
 
-setInterval(() => {
+/* setInterval(() => {
   if (comments.length > 10) comments.shift()
   const message = 'hey you!'.repeat(Math.ceil(Math.random() * 10))
   const date = Date.now()
   comments.push({ message, date })
   pubsub.publish('comments', { commentAdded: { message, date } })
-}, 4000)
+}, 4000) */
