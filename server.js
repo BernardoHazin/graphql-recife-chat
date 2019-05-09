@@ -13,11 +13,11 @@ const opts = {
   timeout: 1000000,
   quiet: true,
   paths: {
-    typeDefs: require.resolve('./apollo-server/type-defs.js'),
-    resolvers: require.resolve('./apollo-server/resolvers.js'),
-    context: require.resolve('./apollo-server/context.js'),
-    directives: require.resolve('./apollo-server/directives.js'),
-    dataSources: require.resolve('./apollo-server/data-sources.js')
+    typeDefs: require.resolve('apollo-server/type-defs.js'),
+    resolvers: require.resolve('apollo-server/resolvers.js'),
+    context: require.resolve('apollo-server/context.js'),
+    directives: require.resolve('apollo-server/directives.js'),
+    dataSources: require.resolve('apollo-server/data-sources.js')
   }
 }
 
