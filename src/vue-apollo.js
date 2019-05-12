@@ -7,7 +7,7 @@ Vue.use(VueApollo)
 
 // Http endpoint
 const httpEndpoint =
-  process.env.VUE_APP_GRAPHQL_HTTP || 'http://localhost:4000/graphql'
+  process.env.VUE_APP_GRAPHQL_HTTP || 'http://localhost:4000/'
 
 // Config
 const defaultOptions = {
