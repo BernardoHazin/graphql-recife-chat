@@ -7,7 +7,7 @@
         width="200px"
         src="./assets/logo.png"
       />
-      <h1>GRAPHQL RECIFE</h1>
+      <h1>Mande sua pergunta!</h1>
     </div>
     <div class="comments col">
       <div class="comments__area" ref="comments">
@@ -28,7 +28,11 @@
       </div>
       <div class="spacer"></div>
       <form class="col" ref="form" @submit.prevent="sendComment">
-        <input v-model="message" placeholder="Envie uma mensagem!" />
+        <input
+          v-model="message"
+          :disabled="loading"
+          placeholder="Envie uma mensagem!"
+        />
       </form>
     </div>
   </div>
@@ -41,6 +45,7 @@ export default {
   name: 'app',
   data() {
     return {
+      loading: false,
       getComments: [],
       message: ''
     }
@@ -50,6 +55,7 @@ export default {
       this.$refs.comments.scrollTop = this.$refs.comments.scrollHeight
     },
     sendComment() {
+      this.loading = true
       this.$apollo
         .mutate({
           mutation: gql`
@@ -63,6 +69,7 @@ export default {
         })
         .finally(() => {
           this.message = ''
+          this.loading = false
         })
     }
   },
