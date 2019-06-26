@@ -121,13 +121,13 @@ export default {
   font-family 'Ubuntu', sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  height 100vh
+  height 96vh
   display grid
   grid-gap 5px
-  grid-template-columns 3fr 3fr
   text-align center
   grid-template-areas 'logo comments' 'logo comments'
-  grid-template-rows 50vh 50vh
+  grid-template-columns 3fr 3fr
+  grid-template-rows 50% 50%
 
   @media (max-width: 800px)
     grid-template-areas 'logo logo' 'comments comments'
@@ -137,17 +137,17 @@ input
   font-size 15px
   border-radius 10px
   outline none
-  border none
+  border 2px solid rgba(#e45c98, 0.4)
   margin 5px
+  background rgba(238, 238, 238, 0.4)
   transition all 0.5s
-  background rgb(238, 238, 238)
   padding 15px
 
 input:focus
   padding 17px
-
+  background rgba(238, 238, 238, 0.8)
 input:hover
-  background rgb(219, 217, 217)
+  background rgb(238, 238, 238)
 
 .spacer
   flex-grow 1
@@ -166,8 +166,7 @@ input:hover
 
 .logo
   grid-area logo
-  background #e45c98
-  color #FFFFFF
+  color #e45c98
   border-radius 10px
 
   &__image
