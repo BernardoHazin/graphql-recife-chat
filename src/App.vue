@@ -55,22 +55,24 @@ export default {
       this.$refs.comments.scrollTop = this.$refs.comments.scrollHeight
     },
     sendComment() {
-      this.loading = true
-      this.$apollo
-        .mutate({
-          mutation: gql`
-            mutation addComment($message: String!) {
-              addComment(message: $message)
+      if (this.message) {
+        this.loading = true
+        this.$apollo
+          .mutate({
+            mutation: gql`
+              mutation addComment($message: String!) {
+                addComment(message: $message)
+              }
+            `,
+            variables: {
+              message: this.message
             }
-          `,
-          variables: {
-            message: this.message
-          }
-        })
-        .finally(() => {
-          this.message = ''
-          this.loading = false
-        })
+          })
+          .finally(() => {
+            this.message = ''
+            this.loading = false
+          })
+      }
     }
   },
   apollo: {
@@ -144,10 +146,9 @@ input
   padding 15px
 
 input:focus
-  padding 17px
-  background rgba(238, 238, 238, 0.8)
-input:hover
   background rgb(238, 238, 238)
+input:hover
+  background rgba(238, 238, 238, 0.8)
 
 .spacer
   flex-grow 1
