@@ -4,8 +4,8 @@
       <img
         class="logo__image"
         alt="Logo"
-        width="200px"
-        src="./assets/logo.png"
+        width="300px"
+        src="./assets/qr.png"
       />
       <h1>Mande sua pergunta!</h1>
     </div>
@@ -119,6 +119,22 @@ export default {
 <style lang="stylus">
 @import url('https://fonts.googleapis.com/css?family=Ubuntu')
 
+body
+  background rgb(40, 44, 52)
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white
+}
+
 #app
   font-family 'Ubuntu', sans-serif
   -webkit-font-smoothing antialiased
@@ -147,6 +163,7 @@ input
 
 input:focus
   background rgb(238, 238, 238)
+
 input:hover
   background rgba(238, 238, 238, 0.8)
 
@@ -172,10 +189,13 @@ input:hover
 
   &__image
     border-radius 10px
+    @media (max-width: 800px)
+      width 200px
 
 .comments
   grid-area comments
-
+  border-radius 10px
+  color #ffffff
   &__area
     overflow-y auto
     overflow-x hidden
@@ -183,10 +203,12 @@ input:hover
   &__box
     text-align left
     max-width 400px
-    word-wrap break-word
     text-align justify
     padding 10px
-    border-bottom 2px solid #FFFFFF
+    > p {
+      max-width 300px
+      word-wrap break-word
+    }
 
 .list-enter-active
   transition all 0.8s
